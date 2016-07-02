@@ -6,7 +6,9 @@
 [![dev-dependencies][dev-dependencies-badge]][dev-dependencies-href]
 
 
-Runs `npm publish`, but sets the tag to `pre-release` if the version being published is a pre-release version.
+npm publish, but doesn't set the "latest" dist-tag to pre-release versions.
+
+See related [issue](https://github.com/npm/npm/issues/13248).
 
 
 ```usage
@@ -15,7 +17,7 @@ usage: npm-publish-safe-latest [not-latest-tag] [-- [options...]]
 not-latest-tag
   the dist-tag if the version being published is a pre-release version
   default: "pre-release"
-  
+
 options
   arguments that will be forwarded to `npm publish`
 ```
