@@ -1,6 +1,6 @@
 {
   "name": "npm-publish-safe-latest",
-  "version": "1.1.0-1",
+  "version": "1.1.0",
   "description": "Runs 'npm publish', but sets the tag to 'pre-release' if the version being published is a pre-release version.",
   "author": "Scott Hardy",
   "license": "MIT",
