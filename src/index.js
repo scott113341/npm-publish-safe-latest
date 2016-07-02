@@ -18,9 +18,11 @@ const {
 } = parseArgs(process.argv.slice(2));
 
 if (semver.prerelease(version)) {
+  console.log(`Publishing with dist-tag ${notLatestTag}`);
   run('npm', ['publish', ...npmPublishArgs, '--tag', notLatestTag]);
 }
 else {
+  console.log(`Publishing with default dist-tag`);
   run('npm', ['publish', ...npmPublishArgs]);
 }
 
