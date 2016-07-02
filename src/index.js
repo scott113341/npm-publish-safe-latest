@@ -1,4 +1,4 @@
-'use strict';
+#!/usr/bin/env node
 
 const spawnSync = require('child_process').spawnSync;
 const fs = require('fs');
