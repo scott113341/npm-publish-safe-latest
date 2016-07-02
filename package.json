@@ -1,13 +1,23 @@
 {
   "name": "npm-publish-safe-latest",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "\"npm publish\", but doesn't set the \"latest\" dist-tag to pre-release versions.",
   "author": "Scott Hardy",
   "license": "MIT",
   "repository": "git@github.com:scott113341/npm-publish-safe-latest.git",
   "homepage": "https://github.com/scott113341/npm-publish-safe-latest",
   "bugs": "https://github.com/scott113341/npm-publish-safe-latest/issues",
-  "keywords": ["npm", "publish", "latest", "dist-tag", "tag", "prerelease", "premajor", "preminor", "prepatch"],
+  "keywords": [
+    "npm",
+    "publish",
+    "latest",
+    "dist-tag",
+    "tag",
+    "prerelease",
+    "premajor",
+    "preminor",
+    "prepatch"
+  ],
   "main": "lib/index.js",
   "files": [
     "lib/"
