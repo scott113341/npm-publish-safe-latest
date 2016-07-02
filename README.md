@@ -16,7 +16,7 @@ not-latest-tag
   the dist-tag if the version being published is a pre-release version
   default: "pre-release"
   
-[options...]
+options
   arguments that will be forwarded to `npm publish`
 ```
 
