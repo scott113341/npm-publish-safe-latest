@@ -8,8 +8,56 @@
 
 npm publish, but doesn't set the "latest" dist-tag to pre-release versions.
 
-See related [issue](https://github.com/npm/npm/issues/13248).
+See related [npm issue](https://github.com/npm/npm/issues/13248).
 
+Installation: `npm install npm-publish-safe-latest --save-dev`
+
+
+### Example Usage #1
+
+Here's an example workflow for publishing with `npm-publish-safe-latest`:
+
+```bash
+$ git commit -am 'Lots of breaking changes as a v2 major release candidate'
+[master 469d6f9] Lots of breaking changes as a major release candidate
+ 100 files changed, 10000000 insertions(+), 0 deletions(-)
+
+$ npm version premajor
+v2.0.0-0
+
+$ ./node_modules/.bin/npm-publish-safe-latest
+Publishing with dist-tag pre-release
++ @scott113341/my-module@v2.0.0-0
+```
+
+Notice how our `dist-tag` was set to `pre-release` instead of `latest`?  That's good.  If we had used `npm publish` instead:
+
+* Our `latest` `dist-tag` **would** have been set to `v2.0.0-0`
+* Anyone running `npm install my-module` **would** have gotten our unstable `v2.0.0-0` release candidate
+
+Disaster averted!
+
+
+### Example Usage #2
+
+Let's say you want to get crazy and automatically publish stuff after you version your package.  In your `package.json`:
+
+```json
+{
+  // ...
+  "scripts": {
+    "preversion": "npm run test",
+    "postversion": "npm-publish-safe-latest yolo-version && git push origin master --tags",
+    "test": "node test/index.js"
+  },
+  // ...
+}
+```
+
+That's pretty cool.  So let's say you run `npm version premajor`.  That'll automatically run your tests (and abort the version bump if they fail), bump your package a major pre-release version, safely publish it (setting the tag to `yolo-version` since it's a pre-release version), and then push your changes (including tags) to your git origin.  Neat, huh?
+
+
+### Full Usage
 
 ```usage
 usage: npm-publish-safe-latest [not-latest-tag] [-- [options...]]
