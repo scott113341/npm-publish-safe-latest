@@ -28,6 +28,9 @@ v2.0.0-0
 $ ./node_modules/.bin/npm-publish-safe-latest
 Publishing with dist-tag pre-release
 + @scott113341/my-module@v2.0.0-0
+
+$ npm info my-module dist-tags
+{ latest: '1.22.4', 'pre-release': '2.0.0-0' }
 ```
 
 Notice how our `dist-tag` was set to `pre-release` instead of `latest`?  That's good.  If we had used `npm publish` instead:
@@ -36,6 +39,19 @@ Notice how our `dist-tag` was set to `pre-release` instead of `latest`?  That's 
 * Anyone running `npm install my-module` **would** have gotten our unstable `v2.0.0-0` release candidate
 
 Disaster averted!
+
+If you want to specify the `dist-tag`, you can pass it in as the first argument.  For example, let's say we instead of the default `pre-release` tag, we wanted to tag our `v2.0.0-0` as `v2-rc`:
+
+```text
+$ ./node_modules/.bin/npm-publish-safe-latest v2-rc
+Publishing with dist-tag v2-rc
++ @scott113341/my-module@v2.0.0-0
+
+$ npm info my-module dist-tags
+{ latest: '1.22.4', 'v2-rc': '2.0.0-0' }
+```
+
+That lets people install the release candidate like this: `npm install my-module@v2-rc`
 
 
 ### Example Usage #2
