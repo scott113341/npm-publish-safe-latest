@@ -47,20 +47,25 @@ Let's say you want to get crazy and automatically publish stuff after you versio
   // ...
   "scripts": {
     "preversion": "npm run test",
-    "postversion": "npm-publish-safe-latest yolo-version && git push origin master --tags",
+    "postversion": "npm-publish-safe-latest && git push --follow-tags",
     "test": "node test/index.js"
   },
   // ...
 }
 ```
 
-That's pretty cool.  So let's say you run `npm version premajor`.  That'll automatically run your tests (and abort the version bump if they fail), bump your package a major pre-release version, safely publish it (setting the tag to `yolo-version` since it's a pre-release version), and then push your changes (including tags) to your git origin.  Neat, huh?
+That's pretty cool.  So let's say you run `npm version premajor`.  Here's what'll happen:
+
+1. Tests run.  The entire process is aborted if they fail.
+1. The package version gets bumped a major pre-release version (to something like `v2.0.0-0`)
+1. The package is published.  Since it's a pre-release version, the `dist-tag` is set to `pre-release` instead of `latest`
+1. Changes (including tags) are pushed to your git origin
 
 
 ### Full Usage
 
 ```usage
-usage: npm-publish-safe-latest [not-latest-tag] [-- [options...]]
+usage: npm-publish-safe-latest [not-latest-tag] [-- options...]
 
 not-latest-tag
   the dist-tag if the version being published is a pre-release version
