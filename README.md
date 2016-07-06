@@ -17,7 +17,7 @@ Installation: `npm install npm-publish-safe-latest --save-dev`
 
 Here's an example workflow for publishing with `npm-publish-safe-latest`:
 
-```bash
+```text
 $ git commit -am 'Lots of breaking changes as a v2 major release candidate'
 [master 469d6f9] Lots of breaking changes as a major release candidate
  100 files changed, 10000000 insertions(+), 0 deletions(-)
@@ -42,7 +42,7 @@ Disaster averted!
 
 Let's say you want to get crazy and automatically publish stuff after you version your package.  In your `package.json`:
 
-```json
+```text
 {
   // ...
   "scripts": {
