@@ -19,7 +19,7 @@ Here's an example workflow for publishing with `npm-publish-safe-latest`:
 
 ```text
 $ git commit -am 'Lots of breaking changes as a v2 major release candidate'
-[master 469d6f9] Lots of breaking changes as a major release candidate
+[v2-release-candidate 469d6f9] Lots of breaking changes as a major release candidate
  100 files changed, 10000000 insertions(+), 0 deletions(-)
 
 $ npm version premajor
