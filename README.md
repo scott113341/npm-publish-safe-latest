@@ -13,7 +13,7 @@ See related [npm issue](https://github.com/npm/npm/issues/13248).
 Installation: `npm install npm-publish-safe-latest --save-dev`
 
 
-### Example Usage #1
+## Example Usage #1
 
 Here's an example workflow for publishing with `npm-publish-safe-latest`:
 
@@ -52,7 +52,7 @@ $ npm info my-module dist-tags
 ```
 
 
-### Example Usage #2
+## Example Usage #2
 
 Let's say you want to get crazy and automatically publish stuff after you version your package.  In your `package.json`:
 
@@ -76,7 +76,7 @@ That's pretty cool.  So let's say you run `npm version premajor`.  Here's what'l
 1. Changes (including tags) are pushed to your git origin
 
 
-### Full Usage
+## Full Usage
 
 ```usage
 usage: npm-publish-safe-latest [not-latest-tag] [-- options...]
