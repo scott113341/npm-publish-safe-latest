@@ -51,8 +51,6 @@ $ npm info my-module dist-tags
 { latest: '1.22.4', 'v2-rc': '2.0.0-0' }
 ```
 
-That lets people install the release candidate like this: `npm install my-module@v2-rc`
-
 
 ### Example Usage #2
 
