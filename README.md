@@ -6,7 +6,7 @@
 [![dev-dependencies][dev-dependencies-badge]][dev-dependencies-href]
 
 
-npm publish, but doesn't set the "latest" dist-tag to pre-release versions.
+`npm publish`, but doesn't set the "latest" dist-tag to pre-release versions.
 
 See related [npm issue](https://github.com/npm/npm/issues/13248).
 
@@ -68,9 +68,9 @@ Let's say you want to get crazy and automatically publish stuff after you versio
 }
 ```
 
-That's pretty cool.  So let's say you run `npm version premajor`.  Here's what'll happen:
+Let's say you run `npm version premajor`.  Here's what'll happen:
 
-1. Tests run.  The entire process is aborted if they fail.
+1. Tests run; the entire process is aborted if they fail
 1. The package version gets bumped a major pre-release version (to something like `v2.0.0-0`)
 1. The package is published.  Since it's a pre-release version, the `dist-tag` is set to `pre-release` instead of `latest`
 1. Changes (including tags) are pushed to your git origin
