@@ -3,12 +3,13 @@
 const spawnSync = require('child_process').spawnSync;
 const fs = require('fs');
 const path = require('path');
+const pkgUp = require('pkg-up');
 const semver = require('semver');
 
 const parseArgs = require('./parse-args.js');
 
 
-const packageJsonPath = path.join(process.cwd(), 'package.json');
+const packageJsonPath = pkgUp.sync();
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath));
 const version = packageJson.version;
 
