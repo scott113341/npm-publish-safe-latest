@@ -2,7 +2,6 @@
 
 const spawnSync = require('child_process').spawnSync;
 const fs = require('fs');
-const path = require('path');
 const pkgUp = require('pkg-up');
 const semver = require('semver');
 
