@@ -1,6 +1,6 @@
 {
   "name": "npm-publish-safe-latest",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "\"npm publish\", but doesn't set the \"latest\" dist-tag to pre-release versions.",
   "author": "Scott Hardy",
   "license": "MIT",
